@@ -32,35 +32,33 @@ const Pesquisa = () => {
     }))
   }
   return (
-    <div className='pt-6'>
+    <div className='pt-6 w-auto'>
       <PageTitle title='Pesquisa' />
       <h1 className='text-center font-bold my-4 text-2xl'>Críticas e sugestões</h1>
-      <p className='text-center my-6'>
-      O restaurante X sempre busca por atender melhor seus clientes.<br />
+      <p className='text-center my-6 md:mt-0 md:ml-6'>
+      A Palpite Box busca conectar o comércio local para atender melhor seus clientes. <br />
 Por isso, estamos sempre abertos a ouvir a sua opinião.
       </p>
       {!sucess && <div className='w-1/5 mx-auto'>
         <label className='font-bold'>Seu nome:</label>
-        <input type='text' className='p-4 block shadow bg-green-100 my-2 rounded' placeholder='Nome' onChange={onChange} name='Nome' value={form.Nome} />
+        <input type='text' className='p-4 block shadow bg-green-100 my-2 rounded ' placeholder='Nome' onChange={onChange} name='Nome' value={form.Nome} />
         <label className='font-bold'>E-mail:</label>
-        <input type='text' className='p-4 block shadow bg-green-100 my-2 rounded' placeholder='Email' onChange={onChange} name='Email' value={form.Email} />
+        <input type='text' className='p-4 block shadow bg-green-100 my-2 rounded ' placeholder='Email' onChange={onChange} name='Email' value={form.Email} />
         <label className='font-bold'>Whatsapp:</label>
-        <input type='text' className='p-4 block shadow bg-green-100 my-2 rounded' placeholder='Whatsapp' onChange={onChange} name='Whatsapp' value={form.Whatsapp} />
+        <input type='text' className='p-4 block shadow bg-green-100 my-2 rounded ' placeholder='Whatsapp' onChange={onChange} name='Whatsapp' value={form.Whatsapp} />
         <div className='flex py-6'>
-        {notas.map(nota => {
-          return (
-            <label className='block w-1/6 text-center' >
-              {nota} <br />
-              <input type='radio' name='Nota' value='4' value={nota} onChange={onChange}/>
-            </label>
-          )
-        })
-        }
+          {notas.map(nota => {
+            return (
+              <label className='block w-1/3 sm: w-auto'>
+                {nota} <br />
+                <input type='radio' name='Nota' value='4' value={nota} onChange={onChange} />
+              </label>
+            )
+          })}
         </div>
         <button className='bg-green-600 px-6 py-4 text-white font-bold rounded-lg shadow-lg hover: shadow' onClick={save}>Salvar</button>
-        <pre>
-        </pre>
-      </div>}
+        <pre />
+                  </div>}
       {sucess && <div className='w-1/5 mx-auto'>
         <p className='mb-6 bg-green-100 border-t border-b border-green-500 text-green-700 px-4 py-3 text-center'>Obrigado por contribuir com a sua sugestão ou crítica.</p>
 
@@ -68,16 +66,16 @@ Por isso, estamos sempre abertos a ouvir a sua opinião.
           retorno.showCoupon && <div className='text-center border p-4 mb-4 '>
             Seu cupom: <br />
             <span className='font-bold text-2xl'>{retorno.Cupom}</span>
-          </div>
+                                </div>
         }
         {
           retorno.showCoupon && <div className='text-center border p-4 mb-4'>
             <span className='font-bold block mb-2'>{retorno.Promo}</span>
             <br />
             <span className='italic'> Tire um Print ou foto desta tela a apresente na sua próxima compra.</span>
-          </div>
+                                </div>
         }
-      </div>}
+                 </div>}
     </div>
 
   )

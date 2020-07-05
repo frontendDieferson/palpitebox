@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <div>
       <PageTitle title='Seja Bem Vindo' />
-      <p className='container mx-auto text-center font-bold mt-6'>
+      <p className='container mx-auto text-center font-bold mt-6 md:mt-0 md-6'>
      A Palpite Box busca conectar o comércio local para atender melhor seus clientes. <br />
 Por isso, estamos sempre abertos a ouvir a sua opinião.
       </p>
