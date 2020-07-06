@@ -7,7 +7,7 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 const Index = () => {
   const { data, error } = useSWR('api/get-promo', fetcher)
-  
+
   return (
     <div>
       <PageTitle title='Seja Bem Vindo' />
@@ -24,8 +24,7 @@ Por isso, estamos sempre abertos a ouvir a sua opinião.
       {!error && data && data.showCoupon &&
         <p className='my-12 text-center mt-6'>
           {data.message}
-        </p>
-      }
+        </p>}
     </div>
   )
 }

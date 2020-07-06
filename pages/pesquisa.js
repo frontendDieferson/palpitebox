@@ -35,7 +35,7 @@ const Pesquisa = () => {
     <div className='pt-6 w-auto'>
       <PageTitle title='Pesquisa' />
       <h1 className='text-center font-bold my-4 text-2xl'>Críticas e sugestões</h1>
-      <p className='text-center my-6 md:mt-0 md:ml-6'>
+      <p className='text-center my-6'>
       A Palpite Box busca conectar o comércio local para atender melhor seus clientes. <br />
 Por isso, estamos sempre abertos a ouvir a sua opinião.
       </p>
@@ -49,14 +49,14 @@ Por isso, estamos sempre abertos a ouvir a sua opinião.
         <div className='flex py-6'>
           {notas.map(nota => {
             return (
-              <label className='block w-1/3 sm: w-auto'>
+              <label className='block w-1/3'>
                 {nota} <br />
                 <input type='radio' name='Nota' value='4' value={nota} onChange={onChange} />
               </label>
             )
           })}
         </div>
-        <button className='bg-green-600 px-6 py-4 text-white font-bold rounded-lg shadow-lg hover: shadow' onClick={save}>Salvar</button>
+        <button className='bg-green-600 px-6 py-4 text-white font-bold rounded-lg shadow-lg hover: shadow mb-8' onClick={save}>Salvar</button>
         <pre />
                   </div>}
       {sucess && <div className='w-1/5 mx-auto'>
