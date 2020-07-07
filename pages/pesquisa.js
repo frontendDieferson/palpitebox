@@ -40,7 +40,7 @@ const Pesquisa = () => {
       A Palpite Box busca conectar o comércio local para atender melhor seus clientes. <br />
 Por isso, estamos sempre abertos a ouvir a sua opinião.
       </p>
-      {!sucess && <div className='w-1/5 mx-auto'>
+      {!sucess && <div className='w-1/4 mx-auto'>
         <label className='font-bold'>Seu nome:</label>
         <input type='text' className='p-4 block shadow bg-green-100 my-2 rounded ' placeholder='Nome' onChange={onChange} name='Nome' value={form.Nome} />
         <label className='font-bold'>E-mail:</label>
@@ -52,16 +52,17 @@ Por isso, estamos sempre abertos a ouvir a sua opinião.
         <div className='flex py-6'>
           {notas.map(nota => {
             return (
-              <label className='block w-1/3'>
+               <label className='block w-1/3'>
                 {nota} <br />
-                <input type='radio' name='Nota' value='4' value={nota} onChange={onChange} />
-              </label>
+                  <input type='radio' name='Nota' value='4' value={nota} onChange={onChange} />
+               </label>
             )
           })}
         </div>
-        <button className='bg-green-600 px-6 py-4 text-white font-bold rounded-lg shadow-lg hover: shadow mb-8' onClick={save}>Salvar</button>
-        <pre />
-                  </div>}
+        <button className='bg-green-600 px-6 py-4 text-white font-bold rounded-lg shadow-lg hover: shadow mb-8' onClick={save}>Enviar crítica ou sugestão</button>
+
+      </div> }
+
       {sucess && <div className='w-1/5 mx-auto'>
         <p className='mb-6 bg-green-100 border-t border-b border-green-500 text-green-700 px-4 py-3 text-center'>Obrigado por contribuir com a sua sugestão ou crítica.</p>
 
@@ -69,16 +70,16 @@ Por isso, estamos sempre abertos a ouvir a sua opinião.
           retorno.showCoupon && <div className='text-center border p-4 mb-4 '>
             Seu cupom: <br />
             <span className='font-bold text-2xl'>{retorno.Cupom}</span>
-                                </div>
+          </div>
         }
         {
           retorno.showCoupon && <div className='text-center border p-4 mb-4'>
             <span className='font-bold block mb-2'>{retorno.Promo}</span>
             <br />
             <span className='italic'> Tire um Print ou foto desta tela a apresente na sua próxima compra.</span>
-                                </div>
+          </div>
         }
-                 </div>}
+      </div>}
     </div>
 
   )
